@@ -74,7 +74,7 @@ const ComplexTable = (props) => {
         {/* <CardMenu /> */}
       </div>
 
-      <div className=" mt-5 mb-4" style={{ display: 'flex' }}>
+      <div className=" mt-5 mb-4 md:grid-cols-3" style={{ display: 'flex' }}>
         <div className="relative ">
           <button
             className={`${isOpen ? 'bg-gray-100' : 'bg-gray-100'
@@ -140,77 +140,68 @@ const ComplexTable = (props) => {
             </div>
           )}
         </div>
-      </div>
+      </div> 
 
 
-      <table class="w-full border-collapse">
+      <div className="overflow-x-auto">
+      <table className="w-full border-collapse">
         <thead>
-
-          <tr class="bg-white-200">
-            <th class="py-2 px-4 text-left no-bold">Customer</th>
-            <th class="py-2 px-4 text-left no-bold">Status</th>
-            <th class="py-2 px-4 text-left no-bold">Date</th>
-            <th class="py-2 px-4 text-left no-bold">Invoice</th>
-            <th class="py-2 px-4 text-left no-bold">People</th>
+          <tr className="bg-gray-200">
+            <th className="py-2 px-4 text-left">Customer</th>
+            <th className="py-2 px-4 text-left">Status</th>
+            <th className="py-2 px-4 text-left">Date</th>
+            <th className="py-2 px-4 text-left">Invoice</th>
+            <th className="py-2 px-4 text-left">People</th>
           </tr>
-
         </thead>
         <tbody>
-          <tr class="border-b">
-            <td class="py-4 px-4" style={{ display: 'flex' }}>
-              <img src={avatar8} alt="Avatar"
-                style={{ width: '31px', borderRadius: '50%' }}
-              />
-              <span style={{ display: 'grid', marginLeft: '7%', }}>
-                <span style={{ fontSize: '12px', }}>Flyod johntosan</span>
-                <span style={{ fontSize: '8px', }}> johntosan@gmail.com</span>
-              </span>
-
+          <tr className="border-b">
+            <td className="py-4 px-4" data-label="Customer" style={{ display: 'flex' }}>
+              <img src={avatar8} alt="Avatar" style={{ width: '31px', borderRadius: '50%' }} />
+              <div style={{ display: 'grid', marginLeft: '7%' }}>
+                <span style={{ fontSize: '12px' }}>Flyod johntosan</span>
+                <span style={{ fontSize: '8px' }}>johntosan@gmail.com</span>
+              </div>
             </td>
-            <td class="py-4 px-4 text-sm">Success</td>
-            <td class="py-4 px-4 text-sm">Nov 02, 2021</td>
-            <td class="py-4 px-4 text-sm">$100.00</td>
-            <td class="py-4 px-4 text-sm">
-              {/* <span> */}
-                <AvatarGroup
-                  avatars={["Rames", "Amy", "Will" ]}
-                  initialCharacters={1}
-                  max={2}
-                  size={30}
-                  displayAllOnHover
-                  shadow={2}
-                />
-              {/* </span> */}
-
+            <td className="py-4 px-4 text-sm" data-label="Status">Success</td>
+            <td className="py-4 px-4 text-sm" data-label="Date">Nov 02, 2021</td>
+            <td className="py-4 px-4 text-sm" data-label="Invoice">$100.00</td>
+            <td className="py-4 px-4 text-sm" data-label="People">
+              <AvatarGroup
+                avatars={["Rames", "Amy", "Will" ]}
+                initialCharacters={1}
+                max={2}
+                size={30}
+                displayAllOnHover
+                shadow={2}
+              />
             </td>
           </tr>
           <tr>
-            <td class="py-4 px-4" style={{ display: 'flex' }}>
-              <img src={avatar8} alt="Avatar"
-                style={{ width: '31px', borderRadius: '50%' }}
-              />
-              <span style={{ display: 'grid', marginLeft: '7%', }}>
-                <span style={{ fontSize: '12px', }}>Flyod johntosan</span>
-                <span style={{ fontSize: '8px', }}> johntosan@gmail.com</span>
-              </span>
-
+            <td className="py-4 px-4" data-label="Customer" style={{ display: 'flex' }}>
+              <img src={avatar8} alt="Avatar" style={{ width: '31px', borderRadius: '50%' }} />
+              <div style={{ display: 'grid', marginLeft: '7%' }}>
+                <span style={{ fontSize: '12px' }}>Flyod johntosan</span>
+                <span style={{ fontSize: '8px' }}>johntosan@gmail.com</span>
+              </div>
             </td>
-            <td class="py-4 px-4 text-sm">Pending</td>
-            <td class="py-4 px-4 text-sm">Nov 02, 2021</td>
-            <td class="py-4 px-4 text-sm">$100.00</td>
-            <td class="py-4 px-4 text-sm">
-            <AvatarGroup
-                  avatars={["Hames", "Amy", "Will" ]}
-                  initialCharacters={1}
-                  max={2}
-                  size={30}
-                  displayAllOnHover
-                  shadow={2}
-                />
+            <td className="py-4 px-4 text-sm" data-label="Status">Pending</td>
+            <td className="py-4 px-4 text-sm" data-label="Date">Nov 02, 2021</td>
+            <td className="py-4 px-4 text-sm" data-label="Invoice">$100.00</td>
+            <td className="py-4 px-4 text-sm" data-label="People">
+              <AvatarGroup
+                avatars={["Hames", "Amy", "Will" ]}
+                initialCharacters={1}
+                max={2}
+                size={30}
+                displayAllOnHover
+                shadow={2}
+              />
             </td>
           </tr>
         </tbody>
       </table>
+    </div>
 
 
 

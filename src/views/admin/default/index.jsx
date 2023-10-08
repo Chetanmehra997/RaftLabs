@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from "components/card";
 import MiniCalendar from "components/calendar/MiniCalendar";
 import AvatarGroup from 'react-avatar-group';
-
+import { FiAlignJustify } from "react-icons/fi";
 import Barchart from "views/admin/default/components/Barchart";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { IoMdSearch } from "react-icons/io";
@@ -22,8 +22,8 @@ import tableDataComplex from "./variables/tableDataComplex.json";
 import 'react-calendar/dist/Calendar.css';
 import "./style.css";
 
-const Dashboard = () => {
-
+const Dashboard = (props) => {
+  const { onOpenSidenav, brandText } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -79,6 +79,13 @@ const Dashboard = () => {
 
               <div className=" flex h-[90px] w-auto flex-row items-center"><IoMdSearch /></div>
 
+              <span
+          className="flex cursor-pointer text-xl text-gray-600 dark:text-white xl:hidden"
+          onClick={onOpenSidenav}
+        >
+          <FiAlignJustify className="h-5 w-5" />
+        </span>
+
             </div>
 
 
@@ -128,7 +135,7 @@ const Dashboard = () => {
           {/* Tables & Charts */}
 
 
-          <div className="grid grid-cols-2 gap-0 mt-5" >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mt-5" >
             <Card extra="!flex-row flex-grow items-center rounded-[0px] bg-mediumpurple rounded-l-lg" >
               <div className="col-span-2 ..." style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '13px', paddingBottom: '13px', }}>
                 <div style={{ display: 'flex' }}>
@@ -335,6 +342,9 @@ const Dashboard = () => {
         
 
         </div>
+
+
+        
       </div>
 
 
