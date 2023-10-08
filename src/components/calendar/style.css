@@ -1,0 +1,28 @@
+/* CustomDatePicker.css */
+.custom-date-picker {
+    width: 300px; /* Adjust the width as needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .arrow-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 10px;
+    outline: none;
+  }
+  
+  .header-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
